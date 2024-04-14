@@ -13,10 +13,6 @@ String coordinatorName = request.getParameter("coordinatorName");
 String coordinatorNumber = request.getParameter("coordinatorNumber");
 String venue = request.getParameter("venue");
 
-/* // Get the image file from the request
-Part filePart = request.getPart("image");
-InputStream inputStream = filePart.getInputStream();
- */
 String query = "INSERT INTO events (serialNo, eName, description, sDate, eDate, coordinatorName, coordinatorNumber, venue) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 try {
@@ -29,10 +25,7 @@ try {
     ps.setString(6, coordinatorName);
     ps.setString(7, coordinatorNumber);
     ps.setString(8, venue);
-
-/*     // Set the image data
-    ps.setBlob(9, inputStream); */
-
+    
     int rowsAffected = ps.executeUpdate();
     if (rowsAffected > 0) {
         %>

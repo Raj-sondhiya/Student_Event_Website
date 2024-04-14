@@ -3,13 +3,14 @@
 <%@ include file="CommonLinks.jsp" %>>
 <jsp:include page="navbar.html" />
 <%
-String eventId = request.getParameter("eventId");
+String eventId = request.getParameter("serialNo");
 
 String qr = "delete from events where serialNo=?";
 PreparedStatement ps = con.prepareStatement(qr);
 
 ps.setString(1, eventId);
 int i=ps.executeUpdate();
+System.out.println(eventId);
 if (i > 0) {
     // SweetAlert for success
     out.println("<script>");

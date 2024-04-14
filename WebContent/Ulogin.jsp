@@ -10,7 +10,6 @@ PreparedStatement ps = con.prepareStatement(query);
 ps.setString(1, email);
 ps.setString(2, password);
 
-// Assuming user table has columns: fname, lname, email, password
 
 ResultSet rs = ps.executeQuery();
 
@@ -26,7 +25,7 @@ if (rs.next()) {
             text: 'Enter correct id and password',
         }).then(function() {
             // Redirect after the user acknowledges the alert
-            window.location.href = "User.jsp";
+            window.location.href = "index.jsp";
         });
     </script>
 <%

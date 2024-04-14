@@ -1,5 +1,6 @@
 <%@page errorPage="Error.jsp" %>
 <%@include file="Database.jsp"%>
+<jsp:include page="CommonLinks.jsp" />
 <% 
 String fname= request.getParameter("fname");
 String lname= request.getParameter("lname");
@@ -12,14 +13,30 @@ ps.setString(2, lname);
 ps.setString(3, email);
 ps.setString(4, password);
 int i = ps.executeUpdate();
-if(i>0)
-{
-	out.println("<script>window.alert('Signup successfully')</script>");
-	response.sendRedirect("User.jsp");
-}
-else
-{
-	out.println("<script>window.alert('Something went wrong')</script>");
+if(i > 0) {
+%>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: 'Signup successfully you can login now',
+        }).then(function() {
+            window.location.href = "index.jsp";
+        });
+    </script>
+<%
+} else {
+%>
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong',
+        }).then(function() {
+            window.location.href = "index.jsp";
+        });
+    </script>
+<%
 }
 con.close();
 %>

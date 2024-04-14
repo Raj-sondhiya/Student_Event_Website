@@ -1,8 +1,8 @@
 <jsp:include page="CommonLinks.jsp" />
 <%@page errorPage="error.jsp" %>
 <%
-String id = request.getParameter("email");
-String pwd = request.getParameter("password");
+String id = request.getParameter("adminemail");
+String pwd = request.getParameter("adminpassword");
 
 if (id.equals("superadmin@sage.com") && pwd.equals("admin123")) {
     response.sendRedirect("EventList.jsp");
@@ -14,7 +14,7 @@ if (id.equals("superadmin@sage.com") && pwd.equals("admin123")) {
             title: 'Oops...',
             text: 'Enter correct id and password',
         }).then(function() {
-            window.location.href = "Admin.jsp";
+            window.location.href = "index.jsp";
         });
     </script>
 <%

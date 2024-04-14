@@ -52,10 +52,7 @@
 
         					<label for="venue">Venue:</label>
         					<input type="text" class="form-control" id="venue" name="venue"><br>
-        					
-<!--         					<label for="eventImage">Event Image:</label>
-                            <input type="file" class="form-control-file" id="eventImage" name="image"><br>
- -->
+  
         					 <button type="submit" class="btn btn-primary btn-block">Save details</button>
     					</form>
         				<a class="btn btn-danger btn-block" href="EventList.jsp">Cancel</a>

@@ -70,6 +70,7 @@
 
                             <button type="submit" class="btn btn-primary btn-block">Update Details</button>
                         </form>
+                        <a class="btn btn-danger btn-block mt-4" href="EventList.jsp">Cancel</a>
                     </div>
                 </div>
             </div>

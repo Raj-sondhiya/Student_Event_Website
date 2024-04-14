@@ -41,14 +41,21 @@
         </div>
     </div>
 
-    <script>
-        // Fetch the content of navbar.html and inject it into the container
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbarContainer').innerHTML = data;
-            });
-    </script>
+   <script>
+    // Fetch the content of navbar.html and inject it into the container
+    fetch('navbar.html')
+        .then(function(response) {
+            return response.text();
+        })
+        .then(function(data) {
+            document.getElementById('navbarContainer').innerHTML = data;
+        })
+        .catch(function(error) {
+            console.error('Error fetching navbar:', error);
+        });
+</script>
+
+
 
 </body>
 </html>

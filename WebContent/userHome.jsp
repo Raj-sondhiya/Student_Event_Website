@@ -1,13 +1,15 @@
+<%@page errorPage="error.jsp" %>
+<%@ include file="Database.jsp" %>
+<jsp:include page="CommonLinks.jsp" />
+<jsp:include page="navbar.html" />
+
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>User home</title>
 </head>
 <body>
-    <%@page errorPage="error.jsp" %>
-    <%@ include file="Database.jsp" %>
-    <jsp:include page="CommonLinks.jsp" />
-    <jsp:include page="navbar.html" />
+   
     <div class="container">
         <h2 align=center>Welcome to user home</h2>
         <div class="row">
