@@ -1,7 +1,8 @@
 <%@ include file="Database.jsp" %>
 <%@ include file="CommonLinks.jsp" %>
 <%
-    int serialNo = Integer.parseInt(request.getParameter("serialNo"));
+try{
+	String serialNo = request.getParameter("serialNo");
     String eventName = request.getParameter("eventName");
     String description = request.getParameter("description");
     Date startDate = Date.valueOf(request.getParameter("startDate"));
@@ -19,7 +20,7 @@
     ps.setString(5, coordinatorName);
     ps.setString(6, coordinatorNumber);
     ps.setString(7, venue);
-    ps.setInt(8, serialNo);
+    ps.setString(8, serialNo);
 
     int rowsUpdated = ps.executeUpdate();
 
@@ -36,4 +37,17 @@
     }
 
     ps.close();
+} catch(Exception e){
+	String errorMessage = e.getMessage().replace("'", "\\'"); // Escape single quotes
+    %>
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Error: <%= errorMessage %>',
+        }).then(function() {
+            window.location.href = "UpdateEvent.jsp"; // Redirect to the update event page
+        });
+    </script>
+    <%
+}
 %>

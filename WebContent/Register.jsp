@@ -15,6 +15,7 @@
                     </div>
                     <div class="card-body">
                         <form action="SaveRegister.jsp">
+                        	    <input type="hidden" name="serialNo" value="<%= request.getParameter("serialNo") %>">
                         	<div class="form-group">
                                 <label for="name">Full name:</label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>

@@ -29,15 +29,15 @@
     <div id="navbarContainer"></div>
     <marquee><h2 style="color: crimson;">Welcome to the sage student event website</h2></marquee>
     <div class="container">
-        <!-- Include User Login/Signup -->
+        <!-- User Login/Signup -->
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <jsp:include page="User.jsp" />
             </div>
-            <!-- Include Admin Login -->
-            <div class="col-md-6">
+            <!-- Admin Login -->
+            <%-- <div class="col-md-6">
                 <jsp:include page="Admin.jsp" />
-            </div>
+            </div> --%>
         </div>
     </div>
 

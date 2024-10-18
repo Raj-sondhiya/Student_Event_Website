@@ -9,7 +9,7 @@
 <body>
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="card mt-5">
                 <div class="card-header">
                     <h3 class="text-center">User Login</h3>
@@ -29,6 +29,7 @@
                     <p class="text-center">Or</p>
                     <button class="btn btn-primary btn-block" onclick="newUser()">Sign Up</button>
                 </div>
+                 <a class="btn btn-sm" href="Admin.jsp">Admin login</a>
             </div>
         </div>
     </div>

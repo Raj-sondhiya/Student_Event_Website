@@ -7,8 +7,9 @@ String course= request.getParameter("course");
 String semester= request.getParameter("semester");
 String contact = request.getParameter("contact");
 String email = request.getParameter("email");
+String serialNo=request.getParameter("serialNo");
 
-String qr = "insert into student values(?,?,?,?,?,?)";
+String qr = "insert into student values(?,?,?,?,?,?,?)";
 PreparedStatement ps = con.prepareStatement(qr);
 ps.setString(1,name);
 ps.setString(2,enrollNo);
@@ -16,6 +17,7 @@ ps.setString(3, course);
 ps.setString(4,semester);
 ps.setString(5, contact);
 ps.setString(6,email);
+ps.setString(7, serialNo);
 
 int i=ps.executeUpdate();
 out.println("<script>");

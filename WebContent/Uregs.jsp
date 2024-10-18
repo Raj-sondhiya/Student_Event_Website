@@ -2,6 +2,9 @@
 <%@include file="Database.jsp"%>
 <jsp:include page="CommonLinks.jsp" />
 <% 
+try{
+	
+
 String fname= request.getParameter("fname");
 String lname= request.getParameter("lname");
 String email= request.getParameter("email");
@@ -39,4 +42,18 @@ if(i > 0) {
 <%
 }
 con.close();
+}catch(Exception e){
+	String errorMessage = e.getMessage().replace("'", "\\'"); // Escape single quotes
+
+    %>
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Error: <%= errorMessage %>',
+        }).then(function() {
+            window.location.href = "index.jsp"; // Redirect to the add event page
+        });
+    </script>
+    <%
+}
 %>

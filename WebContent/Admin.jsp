@@ -1,3 +1,5 @@
+<jsp:include page="CommonLinks.jsp" />
+<jsp:include page="navbar.html" />
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -7,7 +9,7 @@
 	<%@page errorPage="error.jsp" %>
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="card mt-5">
                     <div class="card-header">
                         <h3 class="text-center">Admin Login</h3>

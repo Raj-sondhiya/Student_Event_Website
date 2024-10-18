@@ -4,7 +4,7 @@
 
 <%
     // Retrieve values from the form
-    String eventId = request.getParameter("eventId");
+    String serialNo = request.getParameter("serialNo");
     String eventName = request.getParameter("eventName");
     String description = request.getParameter("description");
     Date startDate = Date.valueOf(request.getParameter("startDate"));
@@ -46,7 +46,8 @@
                     </div>
                     <div class="card-body">
                         <form action="SaveUpdate.jsp" method="post">
-                            <input type="hidden" name="eventId" value="<%= eventId %>">
+                            <input type="hidden" id="serialNo" name="serialNo" value="<%= serialNo %>">
+                            
                             <label for="eventName">Event Name:</label>
                             <input type="text" class="form-control" id="eventName" name="eventName" value="<%= eventName %>" required><br>
 
